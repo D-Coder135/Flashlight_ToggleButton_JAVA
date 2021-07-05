@@ -3,6 +3,7 @@ package com.example.flashlight_togglebutton_java;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
                     String idForFlashlight = cameraManager.getCameraIdList()[0];
-                } catch () {
+                } catch (CameraAccessException exception) {
                 }
             }
         });
