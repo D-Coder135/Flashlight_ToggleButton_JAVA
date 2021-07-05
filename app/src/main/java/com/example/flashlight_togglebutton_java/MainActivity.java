@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-
+                    String idForFlashlight = cameraManager.getCameraIdList()[0];
                 } catch () {
                 }
             }
