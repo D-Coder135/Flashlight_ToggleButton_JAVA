@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if(isChecked) {
+                    if (isChecked) {
                         String idForFlashlight = cameraManager.getCameraIdList()[0];
                         cameraManager.setTorchMode(idForFlashlight, true);
+                    } else {
+
                     }
                 } catch (CameraAccessException exception) {
                     System.out.println(exception);
