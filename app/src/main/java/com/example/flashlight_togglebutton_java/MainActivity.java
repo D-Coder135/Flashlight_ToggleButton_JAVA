@@ -22,11 +22,14 @@ public class MainActivity extends AppCompatActivity {
         mainButton = findViewById(R.id.toggleButton);
 
         mainButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
                     String idForFlashlight = cameraManager.getCameraIdList()[0];
+                    cameraManager.setTorchMode(idForFlashlight, true);
                 } catch (CameraAccessException exception) {
+                    System.out.println(exception);
                 }
             }
         });
