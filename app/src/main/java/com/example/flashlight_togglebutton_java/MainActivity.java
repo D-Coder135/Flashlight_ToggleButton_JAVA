@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -18,5 +19,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainButton = findViewById(R.id.toggleButton);
+
+        mainButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
     }
 }
